@@ -36,7 +36,11 @@
         </div>
     </center>
     <script>
-        var tasks = []
+        var tasks = JSON.parse(localStorage.getItem('tasks')) || []
+
+        function saveTask() {
+            localStorage.setItem('tasks', JSON.stringify(tasks))
+        }
 
         function renderTasks() {
             const table = document.querySelector('#table tbody')
@@ -60,6 +64,7 @@
                 isCompleted: false
             })
             document.getElementById('task').value = ''
+            saveTask()
             renderTasks()
         }
 
@@ -69,17 +74,22 @@
                 tasks[index].date = new Date().toLocaleString();
                 tasks[index].title = editTask.trim()
                 renderTasks()
+                saveTask()
             }
         }
         function completeTask(index) {
             tasks[index].isCompleted = true
+            saveTask()
             renderTasks()
         }
 
         function deleteTask(index) {
             tasks.splice(index, 1)
+            saveTask()
             renderTasks()
         }
+
+        renderTasks()
     </script>
 </body>
 
