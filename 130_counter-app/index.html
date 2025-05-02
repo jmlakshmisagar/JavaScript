@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <center>
+        <p id="result">0</p>
+        <div>
+            <button onclick="inc()">Increment</button>
+            <button onclick="dec()">Decrement</button>
+        </div>
+        <br>
+        <div>
+            <label for="setDiff">
+                Set Difference
+                <input type="number" id="setDiff" value="1">
+            </label>
+        </div>
+    </center>
+    <script>
+        var counter = 0;
+
+        function updateResult() {
+            document.getElementById("result").innerText = counter;
+        }
+
+        function inc() {
+            var diff = parseInt(document.getElementById('setDiff').value) || 1;
+            counter += diff;
+            updateResult();
+        }
+
+        function dec() {
+            var diff = parseInt(document.getElementById('setDiff').value) || 1;
+            counter -= diff;
+            updateResult();
+        }
+
+        document.addEventListener('DOMContentLoaded', updateResult);
+    </script>
+</body>
+
+</html>

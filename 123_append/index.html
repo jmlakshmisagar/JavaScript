@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #card {
+            max-width: 100px;
+            border-radius: 20px;
+            background-color: rgb(207, 207, 207);
+            padding: 1rem 0.6rem;
+
+        }
+
+        #number {
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+            font-size: 5rem;
+            display: flex;
+            align-items: center;
+            justify-self: center;
+        }
+
+        body {
+            display: flex;
+            gap: 5px;
+        }
+    </style>
+
+</head>
+
+<body>
+    <script>
+        function appender() {
+            let i = 0;
+            setInterval(() => {
+                const p1 = document.querySelector('body');
+                const p2 = document.createElement('div')
+                p2.setAttribute('id', 'card')
+                const p3 = document.createElement('span')
+                p3.setAttribute('id', 'number')
+
+                p3.textContent = i
+                i++
+
+                p2.appendChild(p3)
+                p1.append(p2)
+            }, 1000)
+        }
+        // appender()
+    </script>
+</body>
+
+</html>
