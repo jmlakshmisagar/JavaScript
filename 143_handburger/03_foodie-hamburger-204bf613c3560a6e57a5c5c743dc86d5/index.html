@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Foodie Hand Burger</title>
+    <link rel="icon" href="./images/logo.svg">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <nav>
+        <img src="./images/logo.svg" alt="img logo">
+
+        <div class="menu-toggle">&#9776;</div>
+
+        <div class="menu">
+            <span class="close-btn">&times;</span>
+            <ul>
+                <li>Top Picks</li>
+                <li>Whopper</li>
+                <li>Stunner Menu</li>
+                <li>New Foodie Collection</li>
+                <li>Deal of the Day</li>
+            </ul>
+        </div>
+    </nav>
+
+    <main>
+        <center>
+            <section>
+                <img src="./images/hero-image.png" alt="" srcset="">
+                <h1>Well you can't resist anymore</h1>
+                <div class="other-images">
+                    <ul>
+                        <li><img src="./images/burger-1.png" alt="" srcset="">
+                            <h3>Top Pics</h3>
+                        </li>
+                        <li><img src="./images/burger-2.png" alt="" srcset="">
+                            <h3>Whopper</h3>
+                        </li>
+                        <li><img src="./images/burger-3.png" alt="" srcset="">
+                            <h3>Stunner Menu</h3>
+                        </li>
+                        <li><img src="./images/burger-4.png" alt="" srcset="">
+                            <h3>New Foodie Collection</h3>
+                        </li>
+                        <li><img src="./images/burger-5.png" alt="" srcset="">
+                            <h3>Deal of the Day</h3>
+                        </li>
+                    </ul>
+                </div>
+            </section>
+        </center>
+    </main>
+    <footer>
+        <p>Made with ❤ by Lakshmisagar J M</p>
+    </footer>
+</body>
+<script>
+    const menuToggle = document.querySelector('.menu-toggle');
+    const menu = document.querySelector('.menu');
+    const closeBtn = document.querySelector('.close-btn');
+
+    menuToggle.addEventListener('click', () => {
+        menu.classList.add('active');
+    });
+
+    closeBtn.addEventListener('click', () => {
+        menu.classList.remove('active');
+    });
+</script>
+
+</html>

@@ -1,0 +1,25 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+body {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: wheat;
+}
+
+.popup{
+    background-color: white;
+    padding: 2rem;
+    border-radius: 28px;
+}
+
+section{
+    display: flex;
+}
