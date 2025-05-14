@@ -1,0 +1,29 @@
+body {
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+.stringBox {
+    padding: 1rem 5rem;
+}
+
+input {
+    width: 100%;
+    padding: 0.5rem;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-size: 1.2rem;
+}
+
+ul li p {
+    font-size: 1.2rem;
+    font-weight: 900;
+
+}
+
+ul li p span {
+    width: 100%;
+    background-color: rgb(227, 227, 227);
+    padding: 0.4rem 0.8rem;
+    border-radius: 6px;
+    margin-left: 1rem;
+    font-weight: 500;
+}

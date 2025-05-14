@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        table th,
+        td {
+            padding: 2px 6px;
+        }
+    </style>
+</head>
+
+<body>
+    <center>
+        <h1>to-do</h1>
+        <hr>
+        <div>
+            <input type="text" placeholder="Enter the task " id="task">
+            <button onclick="addTask()">Add</button>
+        </div>
+        <br>
+        <div>
+            <table border="1" id="table">
+                <thead>
+                    <th>Date</th>
+                    <th>Title</th>
+                    <th>Modification</th>
+                </thead>
+                <tbody>
+
+                </tbody>
+            </table>
+        </div>
+    </center>
+    <script>
+        var tasks = JSON.parse(localStorage.getItem('tasks')) || []
+
+        function saveTask() {
+            localStorage.setItem('tasks', JSON.stringify(tasks))
+        }
+
+        function renderTasks() {
+            const table = document.querySelector('#table tbody')
+            table.innerHTML = tasks.map((data, index) =>
+                `<tr>
+                    <td>${data.date}</td>
+                    <td style="${data.isCompleted ? 'text-decoration: line-through;' : ''}">${data.title}</td>
+                    <td>
+                        <button onclick="editTask(${index})">Edit</button>
+                        <button onclick="completeTask(${index})">Completed</button>
+                        <button onclick="deleteTask(${index})">Delete</button>
+                    </td>
+                </tr>`
+            ).join('');
+        }
+
+        function addTask() {
+            tasks.push({
+                date: new Date().toLocaleString(),
+                title: document.getElementById('task').value,
+                isCompleted: false
+            })
+            document.getElementById('task').value = ''
+            saveTask()
+            renderTasks()
+        }
+
+        function editTask(index) {
+            const editTask = prompt('Enter the task', tasks[index].title);
+            if (editTask) {
+                tasks[index].date = new Date().toLocaleString();
+                tasks[index].title = editTask.trim()
+                renderTasks()
+                saveTask()
+            }
+        }
+        function completeTask(index) {
+            tasks[index].isCompleted = true
+            saveTask()
+            renderTasks()
+        }
+
+        function deleteTask(index) {
+            tasks.splice(index, 1)
+            saveTask()
+            renderTasks()
+        }
+
+        renderTasks()
+    </script>
+</body>
+
+
+</html>

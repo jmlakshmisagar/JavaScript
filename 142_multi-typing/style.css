@@ -1,0 +1,35 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+body {
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+p {
+    font-size: 3rem;
+    font-weight: 900;
+
+}
+
+span {
+    color: brown;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+
+p span::after {
+    content: '';
+    display: inline-block;
+    height: 55px;
+    width: 3px;
+    background-color: brown;
+}
